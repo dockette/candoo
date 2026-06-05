@@ -22,8 +22,8 @@ Dockette Candoo is a PHP 7.4 FPM Alpine image bundled with Caddy for serving app
 
 - No Compose file is present; local runtime is direct `docker run`.
 - Keep host port `8080` and container port `2015` aligned with README usage if the Caddy configuration changes.
-- GitHub Actions builds context `.` and publishes `dockette/candoo:latest` after the smoke test.
-- The workflow currently passes `IMAGE=... TAG=...` to `make test`, but the Makefile uses `DOCKER_IMAGE` and `DOCKER_TAG` variables.
+- GitHub Actions builds context `.` and tests it with `DOCKER_IMAGE` and `DOCKER_TAG` Makefile variables.
+- Public Docker Hub tags for `dockette/candoo` may be unpublished; README usage should prefer local builds.
 
 ## Guidelines
 

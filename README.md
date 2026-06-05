@@ -1,20 +1,18 @@
 <h1 align=center>Dockette / Candoo</h1>
 
-<p align=center>
-   <a href="https://github.com/dockette/candoo/actions"><img src="https://github.com/dockette/candoo/actions/workflows/docker.yml/badge.svg" alt="GitHub Actions"></a>
-   <a href="https://hub.docker.com/r/dockette/candoo"><img src="https://img.shields.io/docker/pulls/dockette/candoo.svg" alt="Docker Hub pulls"></a>
-   <a href="https://github.com/sponsors/f3l1x"><img src="https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ea4aaa" alt="GitHub Sponsors"></a>
-   <a href="https://github.com/orgs/dockette/discussions"><img src="https://img.shields.io/badge/support-discussions-6f42c1" alt="Support/Discussions"></a>
-</p>
-
 Caddy server with PHP 7.4.
+
+This is a legacy image. It uses PHP 7.4 and Caddy v1, both of which are end-of-life. Do not use it for new production deployments.
+
+Public Docker Hub tags for `dockette/candoo` are not currently published. Build the image locally before running it.
 
 -----
 
 ## Usage
 
 ```bash
-docker run --rm -it -p 8080:2015 -v $(pwd):/srv:delegated dockette/candoo
+DOCKER_TAG=local make build
+docker run --rm -it -p 8080:2015 -v $(pwd):/srv:delegated dockette/candoo:local
 ```
 
 ## Maintenance

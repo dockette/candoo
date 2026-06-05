@@ -32,7 +32,7 @@ jobs:
           tags: "dockette/candoo:latest-test"
 
       - name: "Test image"
-        run: "make test IMAGE=dockette/candoo TAG=latest-test"
+        run: "make test DOCKER_IMAGE=dockette/candoo DOCKER_TAG=latest-test"
 
   build:
     name: "Build"
