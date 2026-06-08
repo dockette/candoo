@@ -9,7 +9,7 @@ build:
 .PHONY: test
 test:
 	docker run --rm ${DOCKER_IMAGE}:${DOCKER_TAG} php -v
-	docker run --rm ${DOCKER_IMAGE}:${DOCKER_TAG} caddy -version
+	docker run --rm ${DOCKER_IMAGE}:${DOCKER_TAG} caddy version
 
 .PHONY: run
 run:

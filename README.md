@@ -2,7 +2,7 @@
 
 Caddy server with PHP 7.4.
 
-This is a legacy image. It uses PHP 7.4 and Caddy v1, both of which are end-of-life. Do not use it for new production deployments.
+This is a legacy image. It uses PHP 7.4, which is end-of-life. Do not use it for new production deployments.
 
 Public Docker Hub tags for `dockette/candoo` are not currently published. Build the image locally before running it.
 
