@@ -3,9 +3,7 @@ FROM php:7.4-fpm-alpine
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
 RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
-    apk add --no-cache curl bash git gnu-libiconv@testing
-
-RUN curl https://getcaddy.com | bash -s personal http.expires,http.realip
+    apk add --no-cache curl bash git gnu-libiconv@testing caddy oniguruma-dev
 
 RUN docker-php-ext-install \
     mbstring \
@@ -25,4 +23,4 @@ ADD Caddyfile /etc/Caddyfile
 
 WORKDIR /srv
 
-CMD ["/usr/local/bin/caddy", "--conf", "/etc/Caddyfile", "--log", "stdout"]
+CMD ["sh", "-c", "php-fpm -D && caddy run --config /etc/Caddyfile --adapter caddyfile"]

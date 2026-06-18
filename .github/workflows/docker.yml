@@ -32,11 +32,12 @@ jobs:
           tags: "dockette/candoo:latest-test"
 
       - name: "Test image"
-        run: "make test IMAGE=dockette/candoo TAG=latest-test"
+        run: "make test DOCKER_IMAGE=dockette/candoo DOCKER_TAG=latest-test"
 
   build:
     name: "Build"
     needs: ["test"]
+    if: github.ref == 'refs/heads/master'
     uses: dockette/.github/.github/workflows/docker.yml@master
     secrets: inherit
     with:
