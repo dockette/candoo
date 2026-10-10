@@ -1,8 +1,6 @@
 <h1 align=center>Dockette / Candoo</h1>
 
-Caddy server with PHP 7.4.
-
-This is a legacy image. It uses PHP 7.4, which is end-of-life. Do not use it for new production deployments.
+Caddy server with PHP 8.4.
 
 Public Docker Hub tags for `dockette/candoo` are not currently published. Build the image locally before running it.
 

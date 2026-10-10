@@ -1,9 +1,8 @@
-FROM php:7.4-fpm-alpine
+FROM php:8.4-fpm-alpine
 
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
-RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
-    apk add --no-cache curl bash git gnu-libiconv@testing caddy oniguruma-dev
+RUN apk add --no-cache curl bash git gnu-libiconv caddy oniguruma-dev
 
 RUN docker-php-ext-install \
     mbstring \
