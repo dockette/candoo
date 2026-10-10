@@ -1,7 +1,5 @@
 FROM php:8.4-fpm-alpine
 
-ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
-
 RUN apk add --no-cache curl bash git gnu-libiconv caddy oniguruma-dev
 
 RUN docker-php-ext-install \
