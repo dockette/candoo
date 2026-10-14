@@ -10,6 +10,7 @@ build:
 test:
 	docker run --rm ${DOCKER_IMAGE}:${DOCKER_TAG} php -v
 	docker run --rm ${DOCKER_IMAGE}:${DOCKER_TAG} caddy version
+	test "$$(docker run --rm ${DOCKER_IMAGE}:${DOCKER_TAG} php -r 'echo ICONV_IMPL, " ", iconv("UTF-8", "ASCII//TRANSLIT", "Žluťoučký kůň");')" = "libiconv Zlutouck'y kun"
 
 .PHONY: run
 run:
