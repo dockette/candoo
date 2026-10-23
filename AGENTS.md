@@ -2,14 +2,14 @@
 
 ## Project
 
-Dockette Candoo is a PHP 8.4 FPM Alpine image bundled with Caddy for serving applications from `/srv`. It exposes Caddy on container port `2015`.
+Dockette Candoo is a PHP 8.5 FPM Alpine image bundled with Caddy for serving applications from `/srv`. It exposes Caddy on container port `2015`.
 
 ## Image
 
 - Image name is `dockette/candoo`.
 - Default tag is `latest`, controlled by `DOCKER_TAG`.
 - Build context is the repository root.
-- `Dockerfile` uses `php:8.4-fpm-alpine`, installs Caddy from Alpine packages, installs Composer, and enables MySQL and PostgreSQL PHP extensions.
+- `Dockerfile` uses `php:8.5-fpm-alpine`, installs Caddy from Alpine packages, installs Composer, and enables MySQL and PostgreSQL PHP extensions.
 - `Caddyfile` is copied to `/etc/Caddyfile` and the default command runs Caddy with logs on stdout.
 
 ## Commands

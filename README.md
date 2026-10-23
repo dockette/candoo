@@ -1,6 +1,6 @@
 <h1 align=center>Dockette / Candoo</h1>
 
-Caddy server with PHP 8.4.
+Caddy server with PHP 8.5.
 
 Public Docker Hub tags for `dockette/candoo` are not currently published. Build the image locally before running it.
 
