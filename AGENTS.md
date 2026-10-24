@@ -17,6 +17,7 @@ Dockette Candoo is a PHP 8.5 FPM Alpine image bundled with Caddy for serving app
 - `make build` builds `${DOCKER_IMAGE}:${DOCKER_TAG}` from `.`.
 - `make test` checks `php -v` and `caddy -version` inside the built image.
 - `make run` starts an interactive container on `8080:2015` with the current directory mounted to `/srv:delegated`.
+- `VERSION` is the release date; `make release` bumps it. CI pushes `latest` also as `<VERSION>` and creates the GitHub release.
 
 ## Runtime Notes
 
