@@ -1,6 +1,7 @@
 DOCKER_IMAGE?=dockette/candoo
 DOCKER_TAG?=latest
 
+include VERSION
 
 .PHONY: build
 build:
@@ -15,3 +16,12 @@ test:
 .PHONY: run
 run:
 	docker run --rm -it -p 8080:2015 -v "$${PWD}:/srv:delegated" ${DOCKER_IMAGE}:${DOCKER_TAG}
+
+.PHONY: version
+version:
+	@echo ${VERSION}
+
+.PHONY: release
+release:
+	@sed -i.bak "s/^VERSION=.*/VERSION=$$(date -u +%Y.%m.%d)/" VERSION && rm VERSION.bak
+	@cat VERSION
